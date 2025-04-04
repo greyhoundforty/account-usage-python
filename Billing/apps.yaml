@@ -1,0 +1,320 @@
+- name: Common Application Services
+  tab: CommonAppServices
+  account: d648f13245d9401883148f3320cee0c8
+  components:
+    - name: Management Other
+      type: per_az
+      charge:
+        - name: Base Platform
+          role: symphony-master
+          type: monthly
+          profile: any
+          region:
+            - name: us-east
+              contract_rate: 271.05
+            - name: us-south
+              contract_rate: 271.05
+            - name: ca-tor
+              contract_rate: 276.79
+    - name: DirectLink
+      type: per_service_instance
+      charge:
+        - name: Direct Link Connect 5 Gbps
+          role: any
+          type: monthly
+          service: 86fb7610-0f92-11ea-a6a3-8b96ed1570d8
+          metric: INSTANCE_FIVEGBPS_UNMETERED_PORT
+          region:
+            - name: us
+              contract_rate: 1469.54
+            - name: ca
+              contract_rate: 1469.54
+        - name: Direct Link Connect 1 Gbps
+          role: any
+          type: monthly
+          service: 86fb7610-0f92-11ea-a6a3-8b96ed1570d8
+          metric: INSTANCE_ONEGBPS_UNMETERED_PORT
+          region:
+            - name: us
+              contract_rate: 516.89
+            - name: ca
+              contract_rate: 516.89
+            - name: eu
+              contract_rate: 516.89
+- name: Common Reporting Services
+  tab: CommonReportServices
+  account: c8b43f39d8524b11bde8c0a1c1767159
+  components:
+    - name: Reporting Service
+      type: per_account
+      charge:
+        - name: Common Reporting
+          role: any
+          type: monthly
+          service: dashdb-for-transactions
+          region:
+            - name: any
+              contract_rate: 25424.00
+- name: ACE Application Services
+  tab: AceAppServices
+  account: 7d9c34bc0f0c40efb78ec1407588dba5
+  allocation: 11.69
+  components:
+    - name: SMC Component
+      type: per_account
+      charge:
+        - name: SMC Console
+          role: smc
+          type: monthly
+          profile: any
+          region:
+            - name: any
+              contract_rate: 2720.00
+    - name: Other Operational Component
+      type: per_az_per_app
+      charge:
+        - name: Compute Essential
+          role: symphony-master
+          type: monthly
+          profile: any
+          region:
+            - name: us-east
+              contract_rate: 2610.77
+            - name: us-south
+              contract_rate: 2610.77
+            - name: ca-tor
+              contract_rate: 2690.56
+        - name: Storage Essential
+          role: scale-gui
+          type: monthly
+          profile: any
+          region:
+            - name: us-east
+              contract_rate: 2300.23
+            - name: us-south
+              contract_rate: 2300.23
+            - name: ca-tor
+              contract_rate: 2367.97
+    - name: Compute Clusters
+      type: per_node
+      charge:
+        - name: Compute Node 1 Monthly
+          role: symphony-worker
+          type: monthly
+          profile: mx2-32x256-cl
+          region:
+            - name: us-east
+              contract_rate: 461.88
+            - name: us-south
+              contract_rate: 461.88
+            - name: ca-tor
+              contract_rate: 475.85
+        - name: Compute Node 1 Daily
+          role: symphony-worker
+          type: daily
+          profile: mx2-32x256-cl
+          region:
+            - name: us-east
+              contract_rate: 16.69
+            - name: us-south
+              contract_rate: 16.69
+            - name: ca-tor
+              contract_rate: 17.20
+    - name: Storage Clusters
+      type: per_node
+      charge:
+        - name: Storage Node 1 Monthly
+          role: scale-storage
+          type: monthly
+          profile: bx2d-metal-192x768
+          region:
+            - name: us-east
+              contract_rate: 2833.00
+            - name: us-south
+              contract_rate: 2833.00
+            - name: ca-tor
+              contract_rate: 2921.62
+        - name: Storage Node 1 Daily
+          role: scale-storage
+          type: daily
+          profile: bx2d-metal-192x768
+          region:
+            - name: us-east
+              contract_rate: 103.07
+            - name: us-south
+              contract_rate: 103.07
+            - name: ca-tor
+              contract_rate: 106.29
+        - name: Storage Node 2 Monthly
+          role: scale-storage
+          type: monthly
+          profile: bx2d-metal-96x384
+          region:
+            - name: us-east
+              contract_rate: 2833.00
+            - name: us-south
+              contract_rate: 2833.00
+            - name: ca-tor
+              contract_rate: 2921.62
+        - name: Storage Node 2 Daily
+          role: scale-storage
+          type: daily
+          profile: bx2d-metal-96x384
+          region:
+            - name: us-east
+              contract_rate: 103.07
+            - name: us-south
+              contract_rate: 103.07
+            - name: ca-tor
+              contract_rate: 106.29
+- name: Simpliciti Applilcation Services
+  tab: Simpliciti_Billing
+  account: 4ed67876ef2f4db682149f91b62ace71
+  allocation: 11.69
+  components:
+    - name: Other Operational Component
+      type: per_az_per_app
+      charge:
+        - name: Compute Essential
+          role: symphony-master
+          type: monthly
+          profile: any
+          region:
+            - name: us-east
+              contract_rate: 2610.77
+            - name: us-south
+              contract_rate: 2610.77
+            - name: ca-tor
+              contract_rate: 2690.56
+    - name: Compute Clusters
+      type: per_node
+      charge:
+        - name: Compute Node 2 Monthly
+          role: symphony-worker
+          type: monthly
+          profile: bx2-64x256
+          region:
+            - name: us-east
+              contract_rate: 777.72
+            - name: us-south
+              contract_rate: 777.72
+            - name: ca-tor
+              contract_rate: 800.55
+        - name: Compute Node 2 Daily
+          role: symphony-worker
+          type: daily
+          profile: bx2-64x256
+          region:
+            - name: us-east
+              contract_rate: 28.15
+            - name: us-south
+              contract_rate: 28.15
+            - name: ca-tor
+              contract_rate: 28.98
+- name: Commodities Application Services
+  tab: CommoditiesAppServices
+  account: 17945fdd4191477194e8a1105f17ffe1
+  allocation: 7.49
+  components:
+    - name: Other Operational Component
+      type: per_az_per_app
+      charge:
+        - name: Compute Essential
+          role: symphony-master
+          type: monthly
+          profile: any
+          region:
+            - name: us-east
+              contract_rate: 3948.70
+            - name: us-south
+              contract_rate: 3948.70
+            - name: ca-tor
+              contract_rate: 4064.83
+    - name: Compute Clusters
+      type: per_node
+      charge:
+        - name: Compute Node 1 Monthly
+          role: symphony-worker
+          type: monthly
+          profile: mx2-32x256-cl
+          region:
+            - name: us-east
+              contract_rate: 581.82
+            - name: us-south
+              contract_rate: 581.82
+            - name: ca-tor
+              contract_rate: 599.05
+        - name: Compute Node 1 Daily
+          role: symphony-worker
+          type: daily
+          profile: mx2-32x256-cl
+          region:
+            - name: us-east
+              contract_rate: 21.08
+            - name: us-south
+              contract_rate: 21.08
+            - name: ca-tor
+              contract_rate: 21.71
+- name: Equities Application Services
+  tab: EquitiesAppServices
+  account: 8d67befa070047fc80ae3570c7b1a89b
+  allocation: 7.49
+  components:
+    - name: Other Operational Component
+      type: per_az_per_app
+      charge:
+        - name: Compute Essential
+          role: symphony-master
+          type: monthly
+          profile: any
+          region:
+            - name: us-east
+              contract_rate: 2850.71
+            - name: us-south
+              contract_rate: 2850.71
+            - name: ca-tor
+              contract_rate: 2937.75
+    - name: Compute Clusters
+      type: per_node
+      charge:
+        - name: Compute Node 1 Monthly
+          role: symphony-worker
+          type: monthly
+          profile: bx2-32x128-cl
+          region:
+            - name: us-east
+              contract_rate: 423.15
+            - name: us-south
+              contract_rate: 423.15
+            - name: ca-tor
+              contract_rate: 435.76
+        - name: Compute Node 1 Daily
+          role: symphony-worker
+          type: daily
+          profile: bx2-32x128-cl
+          region:
+            - name: us-east
+              contract_rate: 15.32
+            - name: us-south
+              contract_rate: 15.32
+            - name: ca-tor
+              contract_rate: 15.78
+- name: Common Monitoring Services
+  tab: CommonMonitoring
+  account: 40cbaee9541f4172b07ccf5f005ccf98
+  allocation: 0
+  components:
+    - name: Monitoring Service
+      type: per_region
+      charge:
+        - name: Common Monitoring
+          role: any
+          type: monthly
+          service: 090c2c10-8c38-11e8-bec2-493df9c49eb8
+          region:
+            - name: us-east
+              contract_rate: 0.00
+            - name: us-south
+              contract_rate: 0.00
+            - name: ca-tor
+              contract_rate: 0.00
